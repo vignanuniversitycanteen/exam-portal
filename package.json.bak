@@ -1,0 +1,11 @@
+{
+    "name": "exam-seating-management",
+    "version": "1.0.0",
+    "scripts": {
+        "frontend": "cd frontend && npm run dev",
+        "backend": "cd backend && npm run dev"
+    },
+    "description": "Root package for executing frontend and backend scripts conveniently",
+    "author": "",
+    "license": "ISC"
+}

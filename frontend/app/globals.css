@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+:root {
+  /* Vignan University Brand Theme */
+  --background: #ffffff;
+  --foreground: #1e1e24;
+  /* Dark Slate for text */
+
+  /* Surface Colors */
+  --card: #ffffff;
+  --card-foreground: #1e1e24;
+  --popover: #ffffff;
+  --popover-foreground: #1e1e24;
+
+  /* Brand Colors configured as Primary/Secondary */
+  --primary: #003366;
+  /* Vignan Navy */
+  --primary-foreground: #ffffff;
+
+  --secondary: #fdb913;
+  /* Vignan Gold */
+  --secondary-foreground: #003366;
+
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+
+  --accent: #f1f5f9;
+  --accent-foreground: #0f172a;
+
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
+
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: #003366;
+
+  --radius: 0.5rem;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Custom Scrollbar - Clean & Professional */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Professional Card Utility */
+@layer components {
+  .pro-card {
+    @apply bg-white border border-slate-200 shadow-sm rounded-lg transition-all duration-200 hover:shadow-md hover:border-indigo-200;
+  }
+
+  /* Navbar specific utility */
+  .vignan-nav {
+    @apply bg-[#003366] text-white shadow-md;
+  }
+
+  .input-theme {
+    @apply bg-slate-50 border-slate-200 text-slate-800 font-semibold focus:bg-white focus:ring-2 focus:ring-indigo-500/10 focus:border-indigo-500 rounded-xl transition-all placeholder:text-slate-400 hover:border-slate-300;
+  }
+
+  /* Gradient Text for Headings */
+  .brand-text {
+    @apply text-[#003366] font-bold;
+  }
+
+  .brand-gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#003366] to-[#004d99];
+  }
+}
