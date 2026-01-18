@@ -27,6 +27,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const app = express();
+app.enable('trust proxy'); // essential for correct protocol detection behind proxies
 
 app.use(cors({
     origin: '*', // Allow all origins for dev
@@ -50,7 +51,7 @@ passport.deserializeUser((obj, done) => {
 passport.use(new MicrosoftStrategy({
     clientID: process.env.MICROSOFT_CLIENT_ID,
     clientSecret: process.env.MICROSOFT_CLIENT_SECRET,
-    callbackURL: process.env.MICROSOFT_CALLBACK_URL || "http://localhost:5000/api/auth/microsoft/callback",
+    callbackURL: "/api/auth/microsoft/callback", // Relative URL for automatic domain detection
     scope: ['user.read']
 },
     async function (accessToken, refreshToken, profile, done) {
